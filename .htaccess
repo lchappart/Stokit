@@ -1,0 +1,7 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect /home to /index.php?component=home
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ index.php?component=$1 [L,QSA]
